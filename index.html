@@ -4,16 +4,156 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="styles.css" />
+		<script
+			src="https://kit.fontawesome.com/85caf9648d.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Document</title>
 	</head>
 	<body>
-		<h1>Hello World</h1>
+		<!-- Banner de arriba -->
+		<div class="container-fluid bg-dark text-light py-3">
+			<header class="text-center">
+				<h1 class="display-6">Please fill the form</h1>
+			</header>
+		</div>
+
+		<!-- Form -->
+		<section class="container my-4 bg-dark w-70 text-light p-2">
+			<!-- Form Header -->
+			<form class="row g-3">
+				<div class="header-form">
+					<h1 class="display-6">Payment form example</h1>
+				</div>
+
+				<!-- Warning -->
+				<div class="display-7 py-2">
+					<p>Some fields are missing</p>
+				</div>
+                
+            
+				<!-- Tarjeta -->
+				<div class="col-md-6">
+					<label for="ccn" class="form-label">Card #</label>
+					<input
+						type="tel"
+						class="form-control"
+						id="ccn"
+						pattern="\d*"
+						maxlength="19"
+						placeholder="XXXXXXXXXX"
+						title="Solo números"
+					/>
+				</div>
+
+				<!-- CVV or CVC -->
+				<div class="col-md-2">
+					<label for="cvc" class="form-label">CVC #</label>
+					<input
+						type="tel"
+						class="form-control"
+						id="cvc"
+						maxlength="4"
+						placeholder="0000"
+						title="Código de seguridad"
+					/>
+				</div>
+
+				<!-- Amount -->
+				<div class="col-4">
+					<i class="fa-solid fa-dollar-sign"></i>
+					<label for="amount" class="form-label">Amount</label>
+					<input
+						type="number"
+						class="form-control"
+						id="amount"
+						pattern="\d*"
+						placeholder="Amount"
+					/>
+				</div>
+
+				<!-- Name-->
+				<div class="col-6">
+					<label for="fname" class="form-label">First Name</label>
+					<input type="text" class="form-control" id="fname" />
+				</div>
+
+				<!-- Last Name -->
+				<div class="col-6">
+					<label for="lname" class="form-label">Last Name</label>
+					<input type="text" class="form-control" id="lname" />
+				</div>
+
+				<!-- City -->
+				<div class="col-6">
+					<label for="city" class="form-label">Ciudad</label>
+					<input type="text" class="form-control" id="city" />
+				</div>
+
+				<!-- State -->
+				<div class="col-2">
+					<label for="inputState" class="form-label">Estado</label>
+					<select id="inputState" class="form-select">
+						<option selected>Elige...</option>
+						<option>...</option>
+					</select>
+				</div>
+
+				<!-- Postal Code -->
+				<div class="col-4">
+					<label for="inputZip" class="form-label">Código postal</label>
+					<input type="text" class="form-control" id="inputZip" />
+				</div>
+
+				<!-- Payment Methods -->
+				<div class="col-6" id="payment">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck" />
+						<label class="form-check-label" for="gridCheck"><i class="fa-brands fa-cc-mastercard"></i></label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck" />
+						<label class="form-check-label" for="gridCheck"><i class="fa-brands fa-cc-visa"></i></label>
+                    </div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="gridCheck" />
+							<label class="form-check-label" for="gridCheck">
+								<i class="fa-brands fa-cc-apple-pay"></i>
+							</label>
+						</div>
+                        <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="gridCheck" />
+							<label class="form-check-label" for="gridCheck">
+								<i class="fa-brands fa-cc-amex"></i>
+							</label>
+						</div>
+					</div>
+				</div>
+
+                <!-- Message -->
+                <div class="col-6">
+                    <label for="msg" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="msg" rows="4" placeholder="Add any notes here:"></textarea>
+                </div>
+
+                <div class="col-12"></div>
+                <div class="col-12"></div>
+
+                <!-- Buttons -->
+				<div class="col-12" id="buttons">
+					<button type="submit" class="btn btn-secondary">Cancel</button>
+					<button type="submit" class="btn btn-primary">Send</button>
+				</div>
+			</form>
+		</section>
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 			integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
